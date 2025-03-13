@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Yongjin Lee</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <header>
+    <h2 class="logo">Yongjin Lee</h2>
+    <nav class="nav" id="navigation">
+      <a class="nav-link nav-home" aria-current="page" href="./index.html">Home</a>
+      <a class="nav-link nav-aboutme" href="./about-me.html">About Me</a>
+      <a class="nav-link nav-blog" href="./blog.html">Blog</a>
+    </nav>
+    <div class="hamburger-menu" id="hamburger" onclick="clickHamburger()">
+      <img src="images/hamburger-icon.png">
+    </div>
+  </header>
+  <div id="burger-nav" style="display: none;">
+    <a class="" aria-current="page" href="index.html"><p>Home</p></a>
+    <a class="" href="./about-me.html"><p>About Me</p></a>
+    <a class="" href="./blog.html"><p>Blog</p></a>
+  </div>
+    <main id="aboutMe">
+      <div id="profile">
+        <img src="images/Screenshot 2025-03-07 at 10.41.06 PM.png" width="300px">
+        <h1>Yongjin Lee</h1>
+        <p>Computer Science student @ Cornell University</p>
+        <button onclick="openInNewTab('images/Yongjin Lee CV.pdf')">
+          <span aria-hidden="true"></span>
+          <span></span>
+          <span>My resume</span>
+        </button>
+      </div>
+    <div id="myIntro">
+      <h1>About Me</h1>
+      <p>Well-versed, driven, and cultured are three words that best describe me. I'm expecting to graduate from Cornell University in May 2028. 
+        My interests are in applying <strong>ML and AI</strong> techniques in the world of <strong>digital agriculture</strong>. I completed my mandatory conscription for the Korean military in Feb 2025 and I'm
+        currently working at Yonsei University, South Korea as a research intern at a wireless networking lab. I'm all about innovation and finding solutions for the people that need
+        it most. Feel free to check out my resume <a href="images/Yongjin Lee CV.pdf" target="_blank">here</a> or email me at <strong>yl2889@cornell.edu!</strong>
+        <br><br>
+        Aside from academics and career, I'm an avid chess player, gym goer, and runner. My Chess.com elo is coming in at 1300 and I'm learning everyday to improve my strategies and
+        tactics to become a stronger player. I really fell in love with lifting weights and running in the army while serving in the frontlines of the Republic of Korea. Looking big and intimidating
+        to North Korean soldiers just yards away was important! If you are into any of these, I'd love to chat about it!
+      </p>
+    </div>
+</main>
+<footer>
+  <div id="name">Yongjin Lee © 2025</div>
+  <div id="footer-images">
+    <img src="images/linkedin.png" width="40px" onclick="openInNewTab('https://www.linkedin.com/in/yongjin-lee-29b215252')">
+    <img src="images/github.png" width="40px" onclick="openInNewTab('https://github.com/yongjinlearner')">
+    <img src="images/icons8-instagram-50.png" width="40px" onclick="openInNewTab('https://www.instagram.com/yongjinleee/')">
+  </div>
+</footer>
+</body>
+
+</html>
