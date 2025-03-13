@@ -150,6 +150,15 @@ nav > a {
   .two-photo {
     flex-direction: column;
   }
+  .blogpost {
+    flex-direction: column !important;
+  }
+  .blogpost > img {
+    width: 50%;
+    height: auto !important;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 #cover-page {
