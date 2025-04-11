@@ -4,6 +4,10 @@ require('dotenv').config()
 const router = express.Router()
 const User = require('../model/User')
 
+const checkForDuplicate = async (req, res) => {
+    // checks if the submitted email is already in the database
+}
+
 router.post('/submit', async (req,res)=>{
     try {
         const { email } = req.body
