@@ -357,7 +357,7 @@ footer {
 .blogpost {
   display: flex;
   gap: 40px;
-  background-color: #94e594;
+  background-color: #b2c8c2;
   border-style: solid;
   border-radius: 30px;
   border-color: #133f13;
@@ -389,4 +389,8 @@ footer {
 
 img[src="images/bald translation.JPG"], img[src="images/new year s3.JPG"] {
   max-width: 80%;
+}
+
+.admin > h1, p {
+  text-align: center;
 }

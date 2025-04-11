@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YONGJIN - ADMIN</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="admin">
+    <h1>Welcome to the admin page</h1>
+    <p>Click this button to send out all the emails</p>
+    <!-- form making email title, body, and message -->
+    <!-- goes directly to emailSender.js -->
+    <!-- send email -->
+    <form action="/admin/send" method="POST">
+        <label for="subject">Subject</label>
+        <input name="subject" id="subject" placeholder="SUBJECT" type="text">
+        <br>
+        <label for="text">Text</label>
+        <textarea name="text" id="text" placeholder="TEXT" type="text"></textarea>
+        <br>
+        <input type="submit" title="Send email"></button>
+    </form>
+</body>
+
+</html>
