@@ -24,10 +24,15 @@ router.post('/admin/login', (req, res) => {
     }
 });
 
-router.post('/send', async (req, res)=>{
-    const {subject, text} = req.body
-    try {await sendEmail(subject, text)}
-    catch (error){console.log('There was a problem with inputting the subject and title')}
+router.post('/admin/send', async (req, res) => {
+    const { subject, text } = req.body
+    try {
+        await sendEmail(subject, text)
+        res.send('Messages have been sent! <a href="/admin">Back to admin</a>.')
+    } catch (error) {
+        res.status(500).send('There was an error with sending the email')
+        console.log('There was a problem with inputting the subject and title')
+    }
 })
 
 module.exports = router

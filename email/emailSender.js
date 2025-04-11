@@ -1,15 +1,17 @@
 const nodemailer = require('nodemailer')
-const mongoose = require('mongoose')
 const User = require('../model/User')
 require('dotenv').config()
 
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
     },
 });
+
 const emailList = async () => {
     try {
         const users = await User.find();
@@ -20,19 +22,18 @@ const emailList = async () => {
         return [];
     }
 };
-async function sendEmail(subject, text) {
+
+const sendEmail = async (subject, text) => {
     const mySubscribers = await emailList()
     const info = await transporter.sendMail({
         from: process.env.EMAIL,
-        to: mySubscribers,
+        bcc: mySubscribers,
         subject: subject,
         text: text,
-        html: "Click <a href='#'>HERE</a> to check out the new blog" 
+        html: text + " Click <a href='#'>HERE</a> to check out the new blog"
     });
 
-    console.log("Message sent: %s", info.messageId);
+    console.log("Message has been sent");
 }
-
-sendEmail().catch(console.error);
 
 module.exports = sendEmail
