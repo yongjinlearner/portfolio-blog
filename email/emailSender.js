@@ -25,6 +25,7 @@ const emailList = async () => {
 
 const sendEmail = async (subject, text) => {
     const mySubscribers = await emailList()
+    console.log("subscribers: ", mySubscribers)
     const info = await transporter.sendMail({
         from: process.env.EMAIL,
         bcc: mySubscribers,
