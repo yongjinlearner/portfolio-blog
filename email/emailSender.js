@@ -30,7 +30,7 @@ const sendEmail = async (subject, text) => {
         bcc: mySubscribers,
         subject: subject,
         text: text,
-        html: text + " Click <a href='#'>HERE</a> to check out the new blog"
+        html: text + " Click <a href='https://yongjinlee.onrender.com/blog.html'>HERE</a> to check out the new blog"
     });
 
     console.log("Message has been sent");
