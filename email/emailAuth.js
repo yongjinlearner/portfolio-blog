@@ -21,7 +21,7 @@ const emailAuth = async (email, token) => {
     const info = await transporter.sendMail({
         from: process.env.EMAIL,
         to: email,
-        subject: "Yongjin's blog: confirmed your email address",
+        subject: "Yongjin's blog: confirm your email address",
         html: `Click <a href="${confirmUrl}">HERE</a> to confirm your email address`
     });
 
