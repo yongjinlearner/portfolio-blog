@@ -14,9 +14,8 @@ const transporter = nodemailer.createTransport({
 
 const emailList = async () => {
     try {
-        const users = await User.find();
-        const list = users.map(user => user.email);
-        return list;
+        const users = await User.find({ confirmed: true }).select('email');
+        return users.map(user => user.email);
     } catch (err) {
         console.error("Could not fetch emails:", err);
         return [];
