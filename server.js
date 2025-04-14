@@ -20,8 +20,7 @@ app.use('/api', submitRoute)
 app.use(session({
     secret: 'yourSecretHere',
     resave: false,
-    saveUninitialized: true
-}));
+    saveUninitialized: true}));
 app.use('/', adminRoute)
 
 const PORT = process.env.PORT || 3000
