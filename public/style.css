@@ -60,7 +60,7 @@ nav {
   display: block;
 }
 
-nav > a {
+nav>a {
   text-decoration: none;
   color: black;
 }
@@ -79,7 +79,7 @@ nav > a {
   cursor: pointer;
 }
 
-.hamburger-menu > img {
+.hamburger-menu>img {
   height: 80%;
 }
 
@@ -90,7 +90,7 @@ nav > a {
   background-color: rgb(7, 60, 7);
 }
 
-#burger-nav > a {
+#burger-nav>a {
   text-decoration: none;
   color: white;
   text-align: center;
@@ -104,7 +104,7 @@ nav > a {
     height: 10%;
   }
 
-  #navigation > a {
+  #navigation>a {
     display: none;
   }
 
@@ -117,14 +117,15 @@ nav > a {
     font-size: 30px;
   }
 
-  .headshot > img {
+  .headshot>img {
     width: 300px;
     transition-duration: 0.5s;
   }
 
   /* Ensure hover effect is included inside the media query */
-  .headshot > img:hover {
-    width: 350px !important; /* Adjust this to your desired hovered width */
+  .headshot>img:hover {
+    width: 350px !important;
+    /* Adjust this to your desired hovered width */
   }
 
   #cover-page {
@@ -150,10 +151,12 @@ nav > a {
   .two-photo {
     flex-direction: column;
   }
+
   .blogpost {
     flex-direction: column !important;
   }
-  .blogpost > img {
+
+  .blogpost>img {
     width: 50%;
     height: auto !important;
     justify-content: center;
@@ -197,7 +200,7 @@ p {
   font-style: normal;
 }
 
-:root{
+:root {
   --bg-color-1: #121212;
   --bg-color-2: #5da879;
   --bg-color-3: #124020;
@@ -232,7 +235,10 @@ button span:not(:first-of-type) {
   position: absolute;
 }
 
-[aria-hidden] { color: transparent; }
+[aria-hidden] {
+  color: transparent;
+}
+
 button span {
   inset: 0;
   display: grid;
@@ -240,15 +246,13 @@ button span {
   place-items: center;
   transition: 0.2s ease;
   border: 2px solid black;
-/*   transform:
+  /*   transform:
     translate(
       calc((var(--active) * var(--coefficient, 0)) * (var(--step) * -1)),
       calc((var(--active) * var(--coefficient, 0)) * (var(--step) * -1))
     ); */
   translate:
-    calc((var(--active) * var(--coefficient, 0)) * (var(--step) * -1))
-    calc((var(--active) * var(--coefficient, 0)) * (var(--step) * -1))
-  ;
+    calc((var(--active) * var(--coefficient, 0)) * (var(--step) * -1)) calc((var(--active) * var(--coefficient, 0)) * (var(--step) * -1));
 }
 
 span:nth-of-type(1) {
@@ -294,6 +298,7 @@ footer {
   color: white;
   background-color: #133f13;
   height: 7vh;
+  margin-top: 5vh;
 }
 
 #name {
@@ -351,9 +356,8 @@ footer {
   margin-left: 25%;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {}
 
-}   
 .blogpost {
   display: flex;
   gap: 40px;
@@ -367,13 +371,21 @@ footer {
   width: 100%;
 }
 
-.blogpost > img {
+.image-container {
+  width: 200px;
+  /* Desired width */
   height: 200px;
-  border-radius: 30px;
+  /* Desired height */
+  overflow: hidden;
+  /* Hide overflow */
 }
 
-#blogpost3 {
-  margin-bottom: 50px;
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50px;
+  /* Maintain aspect ratio and fill the container */
 }
 
 .blog-photo {
@@ -387,10 +399,7 @@ footer {
   align-items: center;
 }
 
-img[src="images/bald translation.JPG"], img[src="images/new year s3.JPG"] {
+img[src="images/bald translation.JPG"],
+img[src="images/new year s3.JPG"] {
   max-width: 80%;
-}
-
-.admin > h1, p {
-  text-align: center;
 }
