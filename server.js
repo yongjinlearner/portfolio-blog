@@ -7,6 +7,7 @@ const session = require('express-session');
 const publicRoute = require('./router/public.route')
 const submitRoute = require('./router/submit.route')
 const adminRoute = require('./router/admin.route')
+const commentRoute = require('./router/comment.route')
 
 const app = express()
 
@@ -20,10 +21,12 @@ app.use('/api', submitRoute)
 app.use(session({
     secret: 'yourSecretHere',
     resave: false,
-    saveUninitialized: true}));
+    saveUninitialized: true
+}));
 app.use('/', adminRoute)
+app.use('/api', commentRoute)
 
 const PORT = process.env.PORT || 3000
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })

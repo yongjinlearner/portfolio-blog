@@ -406,3 +406,7 @@ img[src="images/bald translation.JPG"],
 img[src="images/new year s3.JPG"] {
   max-width: 80%;
 }
+
+input[name="name"] {
+  border: none;
+}
