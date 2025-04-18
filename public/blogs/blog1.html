@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Yongjin Lee</title>
-  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link href="/style.css" rel="stylesheet" type="text/css" />
   <script src="../script.js">
   </script>
 </head>
@@ -147,10 +147,21 @@
     <p>
         The end. Final goodbyes. Can't believe it's over. A lot of regrets, but even more blessings. What will the next chapter of life bring?
     </p>
+    <div id="commentSection">
+      <h2>Leave a Comment</h2>
+      <form id="commentForm">
+        <input type="text" id="author" placeholder="Your name" required />
+        <textarea id="content" placeholder="Your comment" required></textarea>
+        <button type="submit">Post Comment</button>
+      </form>
+    
+      <div id="commentList"></div>
+    </div>
     
 </main>
-</body>
-
+<script>
+  window.blogId = "6801f50e3e0c93bea155c555"
+</script>
 </body>
 <footer>
   <div id="name">Yongjin Lee © 2025</div>

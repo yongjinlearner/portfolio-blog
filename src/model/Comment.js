@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-console.log('Starting to define CommentSchema...');
 
 // Define the schema for the Comment
 const CommentSchema = new mongoose.Schema({
-    blogID: {
-        type: Number,
+    blogId: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Blog', 
         required: true
     },
     username: {
@@ -21,10 +21,4 @@ const CommentSchema = new mongoose.Schema({
         required: true
     }
 });
-
-console.log('CommentSchema defined successfully.');
-
-console.log('Exporting the model...');
 module.exports = mongoose.model('Comment', CommentSchema);
-
-console.log('Model exported.');

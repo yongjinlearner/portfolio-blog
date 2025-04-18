@@ -36,6 +36,7 @@ router.post('/admin/send', async (req, res) => {
 })
 
 router.post('/admin/postBlog', async (req, res) => {
+    console.log('Uploading the blog into the database...')
     const { title } = req.body;
     try {
         const newBlog = new Blog({
@@ -43,6 +44,7 @@ router.post('/admin/postBlog', async (req, res) => {
         })
 
         newBlog.save()
+        console.log("The blog was saved into the database!")
         res.send('The blog was saved to your database!')
     } catch (error) {
         console.error("there was an error with adding this blog", error)

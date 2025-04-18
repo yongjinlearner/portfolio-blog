@@ -210,11 +210,11 @@ p {
 }
 
 /*   transform: translate3d(-0.5rem, -0.5rem, 0) */
-button:is(:hover, :focus-visible) {
+.coolBtn:is(:hover, :focus-visible) {
   --active: 1;
 }
 
-button {
+.coolBtn {
   --active: 0;
   color: white;
   border-radius: 4px;
@@ -227,11 +227,11 @@ button {
   padding: 0;
 }
 
-button span:first-of-type {
+.coolBtn span:first-of-type {
   padding: var(--padding);
 }
 
-button span:not(:first-of-type) {
+.coolBtn span:not(:first-of-type) {
   position: absolute;
 }
 
@@ -239,7 +239,7 @@ button span:not(:first-of-type) {
   color: transparent;
 }
 
-button span {
+.coolBtn span {
   inset: 0;
   display: grid;
   background: var(--bg);
@@ -269,7 +269,7 @@ span:nth-of-type(3) {
   --bg: var(--bg-color-1);
 }
 
-button:active {
+.coolBtn:active {
   --active: 0.5;
 }
 

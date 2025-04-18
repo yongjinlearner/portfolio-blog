@@ -7,6 +7,7 @@ const BlogSchema = new mongoose.Schema({
     },
     date: {
         type: Date,
+        default: Date(),
         required: true
     }
 })
