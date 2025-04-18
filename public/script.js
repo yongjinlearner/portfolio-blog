@@ -29,3 +29,32 @@ function blog(blogNum) {
 function openInNewTab(url) {
   window.open(url, '_blank').focus();
 }
+
+async function loadComments() {
+  try {
+    const res = await fetch(`http://localhost:3000/api/displayComment`);
+    const comments = await res.json(); // Get the comments as a JSON array
+
+    const commentsContainer = document.getElementById("comments-container");
+
+    // Loop through the comments and append them to the page
+    comments.forEach(comment => {
+      const commentDiv = document.createElement("div");
+      commentDiv.classList.add("comment");
+
+      const username = document.createElement("div");
+      username.classList.add("username");
+      username.textContent = comment.username;
+
+      const content = document.createElement("div");
+      content.textContent = comment.content;
+
+      commentDiv.appendChild(username);
+      commentDiv.appendChild(content);
+
+      commentsContainer.appendChild(commentDiv);
+    });
+  } catch (err) {
+    console.error("Error loading comments:", err);
+  }
+}
