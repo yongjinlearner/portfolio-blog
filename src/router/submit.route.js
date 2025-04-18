@@ -3,7 +3,7 @@ const path = require('path')
 require('dotenv').config()
 const router = express.Router()
 const User = require('../model/User')
-const emailAuth = require('../email/emailAuth')
+const emailAuth = require('../../email/emailAuth')
 const crypto = require('crypto')
 
 router.post('/subscribe', async (req, res) => {
