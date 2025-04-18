@@ -2,14 +2,14 @@ const express = require('express')
 const path = require('path')
 require('dotenv').config()
 const router = express.Router()
-const bodyParser = require('body-parser');
-const sendEmail = require('../email/emailSender')
+const sendEmail = require('../../email/emailSender')
+const Blog = require('../model/Blog')
 
 router.get('/admin', (req, res) => {
     if (req.session.loggedIn) {
-        res.sendFile(path.join(__dirname, '../admin/admin.html'));
+        res.sendFile(path.join(__dirname, '../../admin/admin.html'));
     } else {
-        res.sendFile(path.join(__dirname, '../admin/login.html'));
+        res.sendFile(path.join(__dirname, '../../admin/login.html'));
     }
 });
 
@@ -32,6 +32,21 @@ router.post('/admin/send', async (req, res) => {
     } catch (error) {
         res.status(500).send('There was an error with sending the email')
         console.log('There was a problem with inputting the subject and title')
+    }
+})
+
+router.post('/admin/postBlog', async (req, res) => {
+    const { title } = req.body;
+    try {
+        const newBlog = new Blog({
+            title: title
+        })
+
+        newBlog.save()
+        res.send('The blog was saved to your database!')
+    } catch (error) {
+        console.error("there was an error with adding this blog", error)
+        res.status(500).send("There was an issue with posting your blog!")
     }
 })
 

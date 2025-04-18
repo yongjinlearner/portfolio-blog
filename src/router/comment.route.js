@@ -8,6 +8,7 @@ router.post('/comment', async (req, res) => {
     try {
         const { username, comment } = req.body
         const newComment = new Comment({
+            blogID: 0,
             username: username,
             comment: comment,
             date: Date.now()

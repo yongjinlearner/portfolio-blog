@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer')
-const User = require('../model/User')
+const User = require('../src/model/User')
 require('dotenv').config()
 
 const transporter = nodemailer.createTransport({

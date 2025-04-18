@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 require('dotenv').config()
-const connectDB = require('./database/database')
+const connectDB = require('../database/database')
 const session = require('express-session');
 
 const publicRoute = require('./router/public.route')
@@ -13,7 +13,7 @@ const app = express()
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '..', 'public')))
 connectDB()
 
 app.use('/', publicRoute)

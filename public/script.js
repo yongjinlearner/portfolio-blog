@@ -1,7 +1,7 @@
-function clickHamburger(){  
-  
+function clickHamburger() {
+
   var burgerNav = document.getElementById("burger-nav");
-  if(burgerNav.style.display == 'none') {
+  if (burgerNav.style.display == 'none') {
     burgerNav.style.display = 'flex'
   } else {
     burgerNav.style.display = 'none'
@@ -21,9 +21,9 @@ function typeWriter() {
 }
 
 function blog(blogNum) {
-  var blogCode = "blog"+blogNum;
+  var blogCode = "blog" + blogNum;
   console.log(blogCode)
-  window.location.href = "blogs/blog"+blogNum+".html";
+  window.location.href = "blogs/blog" + blogNum + ".html";
 }
 
 function openInNewTab(url) {
@@ -56,5 +56,4 @@ async function loadComments() {
     });
   } catch (err) {
     console.error("Error loading comments:", err);
-  }
-}
+  }}

@@ -1,13 +1,13 @@
 const mongoose = require('mongoose')
 
 const BlogSchema = new mongoose.Schema({
-    blogName: {
+    title: {
         type: String,
         required: true
     },
     date: {
         type: Date,
-        default: Date.now()
+        required: true
     }
 })
 
