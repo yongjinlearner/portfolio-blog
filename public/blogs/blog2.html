@@ -191,8 +191,24 @@
         Have a good Resurrection Day this Sunday, and God bless!
 
       </p>
+      <div id="commentSection">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+          <div class="commentInput">
+          <input type="text" id="author" name="author" placeholder="Your name" required />
+          <textarea id="content" name="content" placeholder="Your comment" required size="100"></textarea>
+        </div>
+          <button type="submit">Post</button>
+        </form>
+        <hr>
+        <div id="commentList"></div>
+      </div>
 
     </main>
+    <script src="/commentHandler.js"></script>
+    <script>
+      window.blogId = "68035f26c083cbbe301af70b";
+    </script>
   </body>
 
 </body>

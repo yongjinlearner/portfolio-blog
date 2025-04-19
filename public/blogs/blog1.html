@@ -150,17 +150,20 @@
     <div id="commentSection">
       <h2>Leave a Comment</h2>
       <form id="commentForm">
-        <input type="text" id="author" placeholder="Your name" required />
-        <textarea id="content" placeholder="Your comment" required></textarea>
-        <button type="submit">Post Comment</button>
+        <div class="commentInput">
+        <input type="text" id="author" name="author" placeholder="Your name" required />
+        <textarea id="content" name="content" placeholder="Your comment" required size="100"></textarea>
+      </div>
+        <button type="submit">Post</button>
       </form>
-    
+      <hr>
       <div id="commentList"></div>
     </div>
     
 </main>
+<script src="/commentHandler.js"></script>
 <script>
-  window.blogId = "6801f50e3e0c93bea155c555"
+  window.blogId = "6801f50e3e0c93bea155c555";
 </script>
 </body>
 <footer>

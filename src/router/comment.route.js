@@ -4,35 +4,40 @@ const router = express.Router()
 const Comment = require('../model/Comment')
 const User = require('../model/User')
 
-router.post('/comment', async (req, res) => {
+router.post('/sendComment/:blogId', async (req, res) => {
     try {
-        const { username, comment } = req.body
+        const { author, content } = req.body; // Match the keys sent from the frontend
+        const { blogId } = req.params;
+        console.log(blogId)
+
         const newComment = new Comment({
-            blogID: 0,
-            username: username,
-            comment: comment,
+            blogId: blogId,
+            author: author, // Map 'author' to 'username'
+            content: content, // Map 'content' to 'comment'
             date: Date.now()
-        })
+        });
 
-        await newComment.save()
-        console.log(`Comment was saved to your database. Page should automatically reload now`)
-        res.redirect('/blogs/test-blog.html');
+        await newComment.save();
+        console.log(`🔥 Comment saved to the database for blog ${blogId}.`);
+        res.json({message: "Comment was successfully added"});
     } catch (error) {
-        console.error('Could not add comment to database', error)
-        res.status(500).send('There was an issue with posting your comment')
+        console.error('💀 Could not add comment to database:', error);
+        res.status(500).send('😭 Oops, something went wrong while posting your comment.');
     }
-})
+});
 
-router.get('/displayComment', async (req, res) => {
+router.get('/showComment/:blogId', async (req, res) => {
     try {
-        const comments = await Comment.find();
+        const { blogId } = req.params; // Extract blogId from the route parameters
+        const comments = await Comment.find({ blogId: blogId }); // Use the extracted blogId
         const mappedComments = comments.map(comment => ({
-            username: comment.username,
-            comment: comment.comment
+            author: comment.author,
+            content: comment.content,
+            date: new Date(comment.date).toLocaleString()
         }));
-        return res.json(mappedComments);
+        return res.json(mappedComments); // Send the mapped comments as JSON
     } catch (err) {
-        console.error("Could not fetch comments:", err);
+        console.error("💀 Could not fetch comments:", err);
         return res.status(500).json({ error: "Could not fetch comments" });
     }
 });

@@ -410,3 +410,74 @@ img[src="images/new year s3.JPG"] {
 input[name="name"] {
   border: none;
 }
+
+.comment-header {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-between;
+}
+
+#commentSection {
+  width: 100%;
+  border-top: 1px solid #dbdbdb; /* Light gray border at the top */
+  padding: 10px 0;
+}
+
+#commentSection h2 {
+  text-align: center;
+}
+
+#commentInput {
+  display: flex;
+  flex-direction: column; /* Stack inputs vertically */
+  align-items: flex-start; /* Align inputs to the left */
+  gap: 10px; /* Add spacing between inputs */
+  width: 100%; /* Ensure the form takes up the full width */
+}
+
+#commentForm {
+  gap: 10px;
+}
+
+#commentForm input {
+  width: 100%; /* Make inputs span the full width */
+  border: 1px solid #dbdbdb; /* Add a light border */
+  padding: 10px; /* Add padding for better usability */
+  font-size: 14px;
+  outline: none;
+}
+
+#commentForm textarea {
+  width: 200%; /* Make it span the full width */
+  height: 100px; /* Set the desired height */
+  border: 1px solid #dbdbdb; /* Add a light border */
+  padding: 10px; /* Add padding for better usability */
+  font-size: 14px;
+  outline: none;
+  resize: none; /* Prevent resizing */
+}
+
+#commentForm input::placeholder {
+  color: #8e8e8e; /* Placeholder color similar to Instagram */
+}
+
+#commentForm button {
+  border-color: #5da879;
+  border-radius: 30%;
+  background: none;
+  color: cadetblue;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#commentForm button:disabled {
+  color: #b2dffc; /* Lighter blue when the button is disabled */
+  cursor: not-allowed;
+}
+
+.commentInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

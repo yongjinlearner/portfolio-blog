@@ -7,12 +7,12 @@ const CommentSchema = new mongoose.Schema({
         ref: 'Blog', 
         required: true
     },
-    username: {
+    author: {
         type: String,
         default: 'Anonymous',
         required: false
     },
-    comment: {
+    content: {
         type: String,
         required: true
     },
